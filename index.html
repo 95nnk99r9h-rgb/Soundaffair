@@ -1,355 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soundaffair – Die Liveband aus Karlsruhe</title>
-<meta name="description" content="Soundaffair – Liveband aus Karlsruhe. Funk, Soul, Blues, Rock &amp; Pop mit vierköpfigem Bläsersatz und drei Stimmen. Für Konzerte, Stadtfeste, Firmenfeiern und private Feiern.">
-<meta name="theme-color" content="#070b12">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIM trifft Bahnsteig – Baufortschrittskontrolle am Haltepunkt Roigheim</title>
+  <meta name="description" content="BIM-Modell zur Baufortschrittskontrolle am Haltepunkt Roigheim: Projektgrundlagen, BIM im Projekt, Digitales Bauschild, Baufortschrittsmodell und 360°-Dokumentation mit OpenSpace. BIM-Fachtagung Berlin, 30.09.2026.">
+  <meta name="theme-color" content="#F7F6F2">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Soundaffair – Die Liveband aus Karlsruhe">
-<meta property="og:description" content="Funk, Soul, Blues, Rock &amp; Pop. Neun Musiker, ein Bläsersatz, drei Stimmen.">
-<meta property="og:locale" content="de_DE">
-<meta property="og:image" content="assets/img/logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="BIM trifft Bahnsteig">
+  <meta property="og:description" content="BIM-Modell zur Baufortschrittskontrolle am Haltepunkt Roigheim – BIM-Fachtagung Berlin, 30.09.2026.">
+  <meta property="og:image" content="assets/img/og-bim-trifft-bahnsteig.jpg">
 
-<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-<a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <!-- ============ Kopfzeile ============ -->
+  <header class="site-header" data-header>
+    <div class="container site-header__inner">
+      <a class="brand" href="#start" aria-label="BIM trifft Bahnsteig – zum Seitenanfang">
+        <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17Z"/><path d="M20 13.5l8 4.5-8 4.5-8-4.5Z"/><path d="M12 18v6.5l8 4.5 8-4.5V18M20 22.5V29"/></svg>
+        <span class="brand__text">BIM trifft Bahnsteig</span>
+      </a>
 
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <div class="wrap nav__inner">
-    <a class="logo" href="#top" aria-label="Soundaffair – Startseite">
-      <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true">
-        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4.5" y="5.5" width="55" height="53" rx="19" stroke="currentColor" stroke-width="7"/>
-          <path d="M48.5 24C48.5 16 41.5 11.5 32 11.5S15.5 16 15.5 23s7 9 16.5 9 16.5 3 16.5 10.5-7 11-16.5 11-16.5-4-16.5-11" stroke="var(--logo-halo)" stroke-width="17"/>
-          <path d="M48.5 24C48.5 16 41.5 11.5 32 11.5S15.5 16 15.5 23s7 9 16.5 9 16.5 3 16.5 10.5-7 11-16.5 11-16.5-4-16.5-11" stroke="currentColor" stroke-width="9.5"/>
-        </g>
-      </svg>
-      <span class="logo__text">sound<em>affair</em></span>
-    </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnavigation" data-nav-toggle>
+        <span class="visually-hidden">Menü</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="nav-toggle__open" d="M4 7h16M4 12h16M4 17h16"/><path class="nav-toggle__close" d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
 
-    <nav class="nav__links" id="navLinks" aria-label="Hauptnavigation">
-      <a href="#band">Band</a>
-      <a href="#besetzung">Besetzung</a>
-      <a href="#setlist">Setlist</a>
-      <a href="#live">Live</a>
-      <a href="#kontakt" class="btn btn--sm">Booking</a>
+      <nav class="site-nav" id="hauptnavigation" aria-label="Hauptnavigation" data-nav>
+        <ul>
+          <li><a href="#vorstellung">Vorstellung</a></li>
+          <li><a href="#projekt">Projekt</a></li>
+          <li><a href="#bim">BIM im Projekt</a></li>
+          <li><a href="#bauschild">Bauschild</a></li>
+          <li><a href="#baufortschritt">Baufortschritt</a></li>
+          <li><a href="#openspace">OpenSpace</a></li>
+          <li><a class="site-nav__cta" href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ============ Hero ============ -->
+    <section class="hero grid-bg" id="start" aria-labelledby="hero-titel">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__meta">
+            <span class="pill">BIM-Fachtagung Berlin</span>
+            <time datetime="2026-09-30">30.09.2026</time>
+          </p>
+          <h1 class="hero__title" id="hero-titel">BIM trifft <span class="accent">Bahnsteig</span></h1>
+          <p class="hero__lead">BIM-Modell zur Baufortschrittskontrolle am Haltepunkt Roigheim.</p>
+
+          <dl class="titleblock">
+            <div><dt>Projekt</dt><dd>Haltepunkt Roigheim</dd></div>
+            <div><dt>Strecke</dt><dd>VzG 4900 · km 91,1+59</dd></div>
+            <div><dt>Bauherr</dt><dd>DB InfraGO AG</dd></div>
+            <div><dt>Projektsteuerung</dt><dd>Mailänder Consult GmbH</dd></div>
+          </dl>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projekt">Zum Projekt
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--outline" href="#openspace">360°-Dokumentation</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <img
+            src="assets/img/bim-plattform-1200.webp"
+            srcset="assets/img/bim-plattform-700.webp 700w, assets/img/bim-plattform-1200.webp 1200w"
+            sizes="(min-width: 1080px) 580px, 88vw"
+            width="1200" height="1200"
+            alt="Isometrische Darstellung: BIM-Modell eines Bahnsteigs, verknüpft mit Bauschild, Baubesprechung und 360°-Aufnahmen"
+            fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Agenda ============ -->
+    <nav class="agenda" aria-label="Agenda">
+      <div class="container">
+        <ol class="agenda__list">
+          <li><a href="#vorstellung"><span class="agenda__no">01</span><span class="agenda__title">Vorstellung</span><span class="agenda__desc">Projektleitung &amp; Projektsteuerung</span></a></li>
+          <li><a href="#projekt"><span class="agenda__no">02</span><span class="agenda__title">Projektgrundlagen</span><span class="agenda__desc">Bestand, Ziele, Beteiligte</span></a></li>
+          <li><a href="#bim"><span class="agenda__no">03</span><span class="agenda__title">BIM im Projekt</span><span class="agenda__desc">Standard- und Zusatzleistungen</span></a></li>
+          <li><a href="#bauschild"><span class="agenda__no">04</span><span class="agenda__title">Digitales Bauschild</span><span class="agenda__desc">Der Bahnhof in 3D</span></a></li>
+          <li><a href="#baufortschritt"><span class="agenda__no">05</span><span class="agenda__title">Baufortschritts&shy;modell</span><span class="agenda__desc">Fortschritt &amp; Punktwolke</span></a></li>
+          <li><a href="#openspace"><span class="agenda__no">06</span><span class="agenda__title">OpenSpace</span><span class="agenda__desc">360°-Videodokumentation</span></a></li>
+        </ol>
+      </div>
     </nav>
 
-    <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+    <!-- ============ 01 Vorstellung ============ -->
+    <section class="section" id="vorstellung" aria-labelledby="vorstellung-titel">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span>01</span><span class="eyebrow__rule"></span><span>Vorstellung</span></p>
+          <h2 class="h2" id="vorstellung-titel">Wer das Projekt führt</h2>
+        </header>
 
-<main id="main">
+        <div class="people">
+          <article class="person">
+            <img class="person__photo" src="assets/img/marcel-steek.webp" width="600" height="666" alt="Porträt Marcel Steek" loading="lazy">
+            <div class="person__body">
+              <div class="person__head">
+                <p class="kicker">Projektleitung · DB InfraGO AG</p>
+                <h3 class="h3">Marcel Steek</h3>
+                <p class="muted">Baumanagement RB Südwest · Verkehrsstationen (V) · V.IO-SW-IV 22</p>
+              </div>
+              <div class="person__block">
+                <h4 class="label">Vita</h4>
+                <ul class="list">
+                  <li>Architektur-Studium</li>
+                  <li>Mitglied Architektenkammer RLP</li>
+                  <li>Mehrjährige Berufserfahrung als Architekt</li>
+                  <li>Technischer Projektleiter Verkehrsstationen</li>
+                </ul>
+              </div>
+              <ul class="contact-list">
+                <li><a href="tel:+4915233346625"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg><span class="visually-hidden">Telefon: </span>0152 / 33346625</a></li>
+                <li><a href="mailto:Marcel.Steek@deutschebahn.com"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span class="visually-hidden">E-Mail: </span>Marcel.Steek@deutschebahn.com</a></li>
+              </ul>
+            </div>
+          </article>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="hero__glow" aria-hidden="true"></div>
-  <div class="hero__grid" aria-hidden="true"></div>
+          <article class="person">
+            <img class="person__photo person__photo--top" src="assets/img/lukas-roese.webp" width="600" height="750" alt="Porträt Lukas Roese" loading="lazy">
+            <div class="person__body">
+              <div class="person__head">
+                <p class="kicker">Externe Projektsteuerung · Mailänder Consult</p>
+                <h3 class="h3">Lukas Roese</h3>
+                <p class="muted">Unterstützung der Projektleitung in sämtlichen Belangen</p>
+              </div>
+              <div class="person__cols">
+                <div class="person__block">
+                  <h4 class="label">Tätigkeiten</h4>
+                  <ul class="list list--small">
+                    <li>Projektsteuerung</li>
+                    <li>Baubetriebs- &amp; Bauphasenplanung</li>
+                    <li>Planlaufmanagement</li>
+                    <li>Verbindliche Koordinierungsanweisung</li>
+                  </ul>
+                </div>
+                <div class="person__block">
+                  <h4 class="label">Vita</h4>
+                  <ul class="list list--small">
+                    <li>Infrastrukturmanagement- &amp; Baumanagement-Studium</li>
+                    <li>Zertifizierung zum BIM-Berater</li>
+                    <li>KI-Trainer</li>
+                    <li>Technischer Anmelder – Baubetriebsplanung</li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="tags" aria-label="Funktion im Projekt">
+                <li>Terminliche Koordination</li>
+                <li>360°-Videodokumentation</li>
+              </ul>
+              <ul class="contact-list">
+                <li><a href="tel:+4972193280612"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg><span class="visually-hidden">Telefon: </span>0721 / 93 280 - 612</a></li>
+                <li><a href="mailto:lroese@mic.de"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span class="visually-hidden">E-Mail: </span>lroese@mic.de</a></li>
+              </ul>
+            </div>
+          </article>
+        </div>
 
-  <div class="wrap hero__inner">
-    <p class="eyebrow reveal">Liveband aus Karlsruhe</p>
+        <div class="orgs">
+          <!-- DB InfraGO · Verkehrsstationen -->
+          <article class="org org--sand">
+            <header>
+              <p class="label">DB InfraGO AG · Baumanagement RB Südwest</p>
+              <h3 class="h3 h3--sm">Verkehrsstationen (V)<br>V.IO-SW-IV</h3>
+            </header>
+            <ul class="units" aria-label="Bereiche des Baumanagements RB Südwest">
+              <li>M · Portfolio&shy;management</li>
+              <li class="is-active" aria-current="true">V · Verkehrsstationen</li>
+              <li>T · Technische Anlagen</li>
+              <li>H · Hoch- und Ausbau</li>
+              <li>Ü · Bauüberwachung</li>
+              <li>W · Techn. Experten / Wissensmanagement</li>
+            </ul>
+            <div>
+              <h4 class="label">Tätigkeiten</h4>
+              <ul class="list">
+                <li>Projektabwicklung aller Leistungsphasen</li>
+                <li>Projekt-, Vertrags- und Nachtragsmanagement</li>
+                <li>Optimierung von Kosten, Terminen und Qualität</li>
+                <li>Planrechtliche und bauaufsichtliche Genehmigungsverfahren</li>
+              </ul>
+            </div>
+            <div class="callout">
+              <p class="label label--bright">BIM im Fokus</p>
+              <p>Sämtliche neuen Projekte werden mittels BIM-Methodik abgewickelt – von Planungsleistungen bis zur Baufortschrittskontrolle während der Bauausführung.</p>
+            </div>
+            <div class="addresses addresses--2">
+              <address><strong>Standort Karlsruhe</strong>Bahnhofplatz 1<br>76137 Karlsruhe</address>
+              <address><strong>Standort Stuttgart</strong>Lautenschlagerstr. 20<br>70173 Stuttgart</address>
+            </div>
+          </article>
 
-    <h1 class="hero__title reveal" style="--d:.08s">
-      <span class="hero__line">Sound</span>
-      <span class="hero__line hero__line--accent">affair</span>
-    </h1>
-
-    <p class="hero__tag reveal" style="--d:.16s">Funk · Soul · Blues · Rock · Pop</p>
-
-    <p class="hero__lead reveal" style="--d:.24s">
-      Neun Musiker, ein vierköpfiger Bläsersatz, drei Stimmen –
-      und ein Abend, den euer Publikum nicht so schnell vergisst.
-    </p>
-
-    <div class="hero__cta reveal" style="--d:.32s">
-      <a class="btn" href="#kontakt">Band anfragen</a>
-      <a class="btn btn--ghost" href="#setlist">Setlist ansehen</a>
-    </div>
-  </div>
-
-  <div class="hero__scroll" aria-hidden="true"><span></span></div>
-</section>
-
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span>Funk</span><i>◆</i><span>Soul</span><i>◆</i><span>Blues</span><i>◆</i><span>Rock</span><i>◆</i><span>Pop</span><i>◆</i><span>HipHop</span><i>◆</i>
-    <span>Funk</span><i>◆</i><span>Soul</span><i>◆</i><span>Blues</span><i>◆</i><span>Rock</span><i>◆</i><span>Pop</span><i>◆</i><span>HipHop</span><i>◆</i>
-    <span>Funk</span><i>◆</i><span>Soul</span><i>◆</i><span>Blues</span><i>◆</i><span>Rock</span><i>◆</i><span>Pop</span><i>◆</i><span>HipHop</span><i>◆</i>
-  </div>
-</div>
-
-<!-- ============ BAND ============ -->
-<section class="section" id="band">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">01 — Die Band</p>
-      <h2 class="h2">Cover in bester Qualität.<br><span class="muted">Live, laut und mit Haltung.</span></h2>
-    </div>
-
-    <div class="band-grid">
-      <div class="band-copy reveal">
-        <p class="lead">
-          Soundaffair steht für energiegeladene Live-Musik mit einem Repertoire aus
-          Funk, Soul, Blues, Rock und Pop. Im Zentrum stehen die beiden Stimmen
-          <strong>Natalie</strong> und <strong>Danny</strong>, die mit starker
-          Bühnenpräsenz und viel Gespür für das Publikum jeden Auftritt zu einem
-          intensiven Erlebnis machen.
-        </p>
-        <p>
-          Dazu kommen heulende Gitarrensoli, schreiende Orgelsounds, groovende Bässe,
-          abwechslungsreiche Percussion, solides Schlagzeug und ein präziser, funkiger
-          Bläsersatz. Songs, die Feuerzeuge zum Glühen bringen – und Grooves, bei denen
-          niemand sitzen bleibt.
-        </p>
-        <p>
-          Ob Konzert, Stadtfest, Firmenfeier oder private Feier: immer mit dem Ziel,
-          das Publikum mitzureißen und die Sorgen des Alltags für einen Abend
-          vergessen zu lassen.
-        </p>
+          <!-- Mailänder Consult -->
+          <article class="org org--white">
+            <header>
+              <p class="label">planen · entwickeln · steuern</p>
+              <h3 class="h3 h3--sm">Mailänder Consult</h3>
+            </header>
+            <dl class="stats">
+              <div><dt>Fachbereiche</dt><dd>14</dd></div>
+              <div><dt>Mitarbeitende</dt><dd>350+</dd></div>
+              <div><dt>Projekte</dt><dd>1400+</dd></div>
+              <div><dt>Jahre inhabergeführt</dt><dd>40</dd></div>
+            </dl>
+            <dl class="fields">
+              <div><dt>Eisenbahn</dt><dd>Bahnhöfe · Aus- und Neubaustrecken</dd></div>
+              <div><dt>Architektur</dt><dd>Empfangsgebäude · Büro · öffentliche Gebäude</dd></div>
+              <div><dt>Ingenieurbau</dt><dd>Brücken · Konstruktiver IB · Verkehrsstationen</dd></div>
+              <div><dt>Nahverkehr &amp; Straße</dt><dd>Stadtbahn · ÖPNV · Bundesstraßen · Radwege</dd></div>
+              <div><dt>Flächenmanagement</dt><dd>Flächensicherung · Flächenerwerb · Entschädigungen · Nutzungsvereinbarungen · Eintragungsbewilligungen · Grunddienstbarkeiten</dd></div>
+              <div><dt>Umwelt, Natur &amp; Artenschutz</dt><dd>Umweltplanung · Artenschutz · Landschaft · UBB · Boden- und Gewässerschutz</dd></div>
+              <div class="fields__wide"><dt>Projektsteuerung &amp; -management</dt><dd>Projektsteuerung nach AHO · Projektmanagement · PMO · Baumanagement · Baubetriebsplanung · Baumonitoring</dd></div>
+            </dl>
+            <div class="addresses addresses--3">
+              <address><strong>Hauptsitz Karlsruhe</strong>Mathystraße 13<br>0721 / 93 280 – 0</address>
+              <address><strong>Niederlassung Frankfurt</strong>Hahnstraße 38<br>069 / 95 93 20 09-0</address>
+              <address><strong>Niederlassung Stuttgart</strong>Lange Straße 9<br>0711 / 49 07 90-0</address>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <ul class="stats reveal" style="--d:.1s">
-        <li><b>9</b><span>Musiker auf der Bühne</span></li>
-        <li><b>4</b><span>Mann Bläsersatz</span></li>
-        <li><b>3</b><span>Stimmen</span></li>
-        <li><b>6</b><span>Genres von Funk bis HipHop</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- ============ 02 Projektgrundlagen ============ -->
+    <section class="section section--sand" id="projekt" aria-labelledby="projekt-titel">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow"><span>02</span><span class="eyebrow__rule"></span><span>Projektgrundlagen</span></p>
+            <h2 class="h2" id="projekt-titel">Haltepunkt Roigheim</h2>
+          </div>
+          <figure class="line-strip" aria-label="Streckenlage: Bad Friedrichshall, Möckmühl, Roigheim, Osterburken">
+            <figcaption class="line-strip__km">VzG 4900 – km 91,1+59</figcaption>
+            <ol class="line-strip__stations">
+              <li>Bad Friedrichshall</li>
+              <li>Möckmühl</li>
+              <li class="is-current"><strong>Roigheim</strong></li>
+              <li>Osterburken</li>
+            </ol>
+          </figure>
+        </header>
 
-<!-- ============ BESETZUNG ============ -->
-<section class="section section--alt" id="besetzung">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">02 — Besetzung</p>
-      <h2 class="h2">Neun Leute, ein Groove.</h2>
-      <p class="sec-sub">
-        So breit aufgestellt wie kaum eine Coverband der Region: kompletter
-        Bläsersatz, volle Rhythmusgruppe und drei Stimmen.
-      </p>
-    </div>
+        <div class="baseline">
+          <figure class="baseline__photo">
+            <img src="assets/img/roigheim-bestand.webp" width="836" height="626" alt="Bestehender Bahnsteig am Haltepunkt Roigheim mit niedriger Bahnsteigkante und Gleisen" loading="lazy">
+            <figcaption>Bestand am Haltepunkt Roigheim</figcaption>
+          </figure>
 
-    <div class="cards">
-      <article class="card reveal">
-        <span class="card__num">Vocals</span>
-        <h3>Drei Stimmen</h3>
-        <p>
-          Im Zentrum stehen Natalie und Danny – zweistimmig, dreistimmig,
-          im Wechsel oder gemeinsam an der Rampe.
-        </p>
-        <p class="card__names">Natalie · Danny</p>
-      </article>
+          <div class="compare-wrap">
+            <table class="compare">
+              <caption class="visually-hidden">Ausgangssituation und Zielsetzung im Vergleich</caption>
+              <thead>
+                <tr><th scope="col"><span class="visually-hidden">Merkmal</span></th><th scope="col">Ausgangssituation</th><th scope="col">Zielsetzung</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Bahnsteiglänge</th><td data-label="Ausgangssituation">Bahnsteig 1: 253 m<br>Bahnsteig 2: 243 m</td><td data-label="Zielsetzung">Neubau mit je 170 m</td></tr>
+                <tr><th scope="row">Bahnsteighöhe</th><td data-label="Ausgangssituation">38 cm über SO – nicht barrierefrei</td><td data-label="Zielsetzung">76 cm über SO – Barrierefreiheit hergestellt</td></tr>
+                <tr><th scope="row">Leitsystem</th><td data-label="Ausgangssituation">Kein Blindenleitstreifen vorhanden</td><td data-label="Zielsetzung">Blindenleitsystem</td></tr>
+                <tr><th scope="row">Ausstattung</th><td data-label="Ausgangssituation">Bahnsteig 2 kaum ausgestattet</td><td data-label="Zielsetzung">Ausstattung nach Kat 6 (Wetterschutz, Beleuchtung etc.)</td></tr>
+                <tr><th scope="row">Umfeld</th><td data-label="Ausgangssituation">Schlechter baulicher Zustand</td><td data-label="Zielsetzung">Neue Zuwegungen und Vorplatz</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-      <article class="card reveal" style="--d:.08s">
-        <span class="card__num">Horns</span>
-        <h3>Vierköpfiger Bläsersatz</h3>
-        <p>
-          Präzise, funkige Arrangements, die jedem Song den entscheidenden
-          Druck geben – von zarten Pads bis zur vollen Wand.
-        </p>
-        <p class="card__names">4 Bläser</p>
-      </article>
+        <div class="charts">
+          <figure class="chart">
+            <div class="chart__head"><h3 class="h4">Bahnsteighöhe</h3><span class="chart__unit">über Schienenoberkante (SO)</span></div>
+            <div class="height-chart" role="img" aria-label="Bahnsteighöhe: Bestand 38 Zentimeter, Neubau 76 Zentimeter über Schienenoberkante">
+              <div class="height-chart__bar height-chart__bar--old" style="--h: 38"><span>38 cm</span></div>
+              <div class="height-chart__bar height-chart__bar--new" style="--h: 76"><span>76 cm</span></div>
+              <p class="height-chart__note">Barrierefreiheit mit Blindenleitsystem</p>
+            </div>
+            <div class="height-chart__labels" aria-hidden="true"><span>Bestand</span><span>Neubau</span></div>
+          </figure>
 
-      <article class="card reveal" style="--d:.16s">
-        <span class="card__num">Rhythm</span>
-        <h3>Komplette Rhythmusgruppe</h3>
-        <p>
-          Gitarre, Orgel und Keys, groovender Bass, solides Schlagzeug
-          und abwechslungsreiche Percussion.
-        </p>
-        <p class="card__names">Rhythmusgruppe</p>
-      </article>
-    </div>
+          <figure class="chart">
+            <div class="chart__head"><h3 class="h4">Bahnsteiglänge</h3><span class="chart__unit">in Metern</span></div>
+            <dl class="length-chart">
+              <div class="length-chart__row"><dt>Bestand Bstg 1</dt><dd><span class="length-chart__bar" style="--m: 253"></span><span class="length-chart__val">253</span></dd></div>
+              <div class="length-chart__row"><dt>Bestand Bstg 2</dt><dd><span class="length-chart__bar" style="--m: 243"></span><span class="length-chart__val">243</span></dd></div>
+              <div class="length-chart__row length-chart__row--new"><dt>Neubau je Bstg</dt><dd><span class="length-chart__bar" style="--m: 170"></span><span class="length-chart__val">170</span></dd></div>
+            </dl>
+            <figcaption class="muted">Kürzere, dafür vollständig ausgestattete Bahnsteige nach Kategorie 6.</figcaption>
+          </figure>
+        </div>
 
-    <!-- TODO: Instrumente je Person ergänzen, sobald die Zuordnung vorliegt. -->
-    <div class="roster reveal">
-      <p class="roster__label">Auf der Bühne</p>
-      <ul class="roster__list">
-        <li>Natalie</li><li>Danny</li><li>John</li><li>Matze</li><li>Thomas</li>
-        <li>Moritz</li><li>Normann</li><li>Kevin</li><li>Alex</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SETLIST ============ -->
-<section class="section" id="setlist">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">03 — Setlist</p>
-      <h2 class="h2">Von den Blues Brothers<br>über Tina Turner<br><span class="muted">bis Fanta Vier.</span></h2>
-      <p class="sec-sub">
-        Unser Repertoire ist über die Jahre stetig gewachsen – hier findet ihr
-        nur einen Auszug. Ihr vermisst einen Song? Fragt einfach.
-      </p>
-    </div>
-
-    <ol class="setlist reveal">
-      <li><span class="setlist__song">Proud Mary</span><span class="setlist__art">Tina Turner</span></li>
-      <li><span class="setlist__song">Gimme Some Lovin’</span><span class="setlist__art">Blues Brothers</span></li>
-      <li><span class="setlist__song">Hold On, I’m Comin’</span><span class="setlist__art">Blues Brothers</span></li>
-      <li><span class="setlist__song">Jailhouse Rock</span><span class="setlist__art">Blues Brothers</span></li>
-      <li><span class="setlist__song">Superstition</span><span class="setlist__art">Stevie Wonder</span></li>
-      <li><span class="setlist__song">Uptown Funk</span><span class="setlist__art">Mark Ronson &amp; Bruno Mars</span></li>
-      <li><span class="setlist__song">Valerie</span><span class="setlist__art">Amy Winehouse</span></li>
-      <li><span class="setlist__song">Easy</span><span class="setlist__art">Die Fantastischen Vier</span></li>
-    </ol>
-
-    <p class="setlist__note reveal">
-      <a class="link" href="#kontakt">Komplette Songliste anfragen →</a>
-    </p>
-  </div>
-</section>
-
-<!-- ============ LIVE / REFERENZEN ============ -->
-<section class="section section--alt" id="live">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">04 — Live &amp; Referenzen</p>
-      <h2 class="h2">Da waren wir schon.</h2>
-    </div>
-
-    <div class="two-col">
-      <div class="reveal">
-        <h3 class="h3">Bühnen</h3>
-        <ul class="ticks">
-          <li>WOODSTICKEL Festival</li>
-          <li>Dorfschänke Karlsruhe</li>
-          <li>KAP Karlsruhe</li>
-          <li>Café Emaille Karlsruhe</li>
-          <li>Stadtfeste in der Region Karlsruhe</li>
-        </ul>
+        <div class="parties">
+          <h3 class="h3 h3--sm">Projektbeteiligte</h3>
+          <ul class="parties__grid">
+            <li class="party party--dark">
+              <p class="label label--bright">Bauherr / Projektleitung</p>
+              <strong>DB InfraGO AG</strong>
+              <address>Regionalbereich Südwest<br>Bahnhofplatz 1<br>76137 Karlsruhe</address>
+            </li>
+            <li class="party">
+              <p class="label label--accent">Projektsteuerung &amp; Planlaufmanagement</p>
+              <strong>Mailänder Consult GmbH</strong>
+              <address>Mathystraße 13<br>76133 Karlsruhe</address>
+            </li>
+            <li class="party">
+              <p class="label label--accent">Ausführungsplanung &amp; ausführende Baufirma</p>
+              <strong>REIF Bauunternehmung GmbH &amp; Co. KG</strong>
+              <address>Beim Runden Plom 13<br>76275 Ettlingen</address>
+            </li>
+            <li class="party">
+              <p class="label label--accent">Bauüberwachung</p>
+              <strong>SCS Engineering GmbH</strong>
+              <address>Rennbachweg 45a<br>75181 Pforzheim</address>
+            </li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="reveal" style="--d:.1s">
-        <h3 class="h3">Anlässe</h3>
-        <ul class="ticks">
-          <li>Konzerte &amp; Clubshows</li>
-          <li>Stadt- und Straßenfeste</li>
-          <li>Firmenfeiern &amp; Firmenevents</li>
-          <li>Private Feiern und Jubiläen</li>
-          <li>Vereins- und Sommerfeste</li>
-        </ul>
+    <!-- ============ 03 BIM im Projekt ============ -->
+    <section class="section section--dark grid-bg-dark" id="bim" aria-labelledby="bim-titel">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow eyebrow--bright"><span>03</span><span class="eyebrow__rule"></span><span>BIM im Projekt</span></p>
+            <h2 class="h2" id="bim-titel">Ein Modell für Planung, Baustelle und Öffentlichkeit</h2>
+          </div>
+          <p class="lead">Das BIM-Modell ist in Roigheim nicht nur Planungswerkzeug: Es begleitet jede Baubesprechung, dokumentiert den Fortschritt und zeigt das Ergebnis direkt am Bauschild.</p>
+        </header>
+
+        <div class="bim-cols">
+          <article class="bim-card">
+            <header class="bim-card__head"><h3 class="h3 h3--sm">Standardleistungen BAP</h3><span class="chip">Standard</span></header>
+            <ol class="numbered">
+              <li><span>01</span>BIM-Modell als Grundlage in der Baubesprechung</li>
+              <li><span>02</span>Digitale Übergabe von Baustelleninformationen</li>
+              <li><span>03</span>Erstellen As-Built-Modell inkl. Erfassung mittels Punktwolken und Kontrolle</li>
+            </ol>
+          </article>
+          <article class="bim-card bim-card--beige">
+            <header class="bim-card__head"><h3 class="h3 h3--sm">Zusatzleistungen &amp; Besonderheiten</h3><span class="chip chip--dark">Roigheim</span></header>
+            <ol class="numbered" start="4">
+              <li><span>04</span><a href="#bauschild">BIM-Integration im Bauschild</a></li>
+              <li><span>05</span><a href="#baufortschritt">Wöchentliche Darstellung des aktuellen Baufortschritts am BIM-Modell</a></li>
+              <li><span>06</span><a href="#openspace">360°-Videodokumentation mit BIM-Modell verknüpft</a></li>
+            </ol>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="infobox reveal">
-      <h3 class="h3">Infos für Veranstalter</h3>
-      <p>
-        Wir bringen Erfahrung, Verlässlichkeit und einen Sound mit, der auch große
-        Bühnen füllt. Technical Rider, Stageplan und Pressematerial schicken wir
-        auf Anfrage zu – ebenso Angaben zu Spielzeiten, Aufbau und Platzbedarf für
-        die neunköpfige Besetzung.
+    <!-- ============ 04 Digitales Bauschild ============ -->
+    <section class="section" id="bauschild" aria-labelledby="bauschild-titel">
+      <div class="container sign">
+        <figure class="sign__photo">
+          <img
+            src="assets/img/digitales-bauschild-1000.webp"
+            srcset="assets/img/digitales-bauschild-640.webp 640w, assets/img/digitales-bauschild-1000.webp 1000w"
+            sizes="(min-width: 1080px) 540px, 92vw"
+            width="1000" height="1038"
+            alt="Bauschild der Modernisierungs-Initiative am Haltepunkt Roigheim mit QR-Code zum 3D-Modell" loading="lazy">
+          <figcaption>Bauschild vor Ort · Roigheim</figcaption>
+        </figure>
+
+        <div class="sign__text">
+          <p class="eyebrow"><span>04</span><span class="eyebrow__rule"></span><span>Digitales Bauschild</span></p>
+          <h2 class="h2" id="bauschild-titel">Blick in die Zukunft: Der Bahnhof in 3D</h2>
+          <p class="lead">Das Bauschild der Modernisierungs-Initiative wird zum Zugang ins BIM-Modell: Ein QR-Code führt direkt zum digitalen Bahnhof.</p>
+          <dl class="facts">
+            <div><dt>Initiative</dt><dd>Modernisierung von 51 Bahnhöfen in Baden-Württemberg</dd></div>
+            <div><dt>Fertigstellung</dt><dd>Herbst 2026</dd></div>
+          </dl>
+          <div class="qr-card">
+            <img src="assets/img/qr-digitales-bauschild.png" width="1254" height="1254" alt="QR-Code zum 3D-Modell des Haltepunkts Roigheim" loading="lazy">
+            <div>
+              <strong>QR-Code scannen</strong>
+              <p>und den neuen Haltepunkt Roigheim im 3D-Modell erkunden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 Baufortschrittsmodell ============ -->
+    <section class="section section--sand" id="baufortschritt" aria-labelledby="baufortschritt-titel">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow"><span>05</span><span class="eyebrow__rule"></span><span>Baufortschrittsmodell</span></p>
+            <h2 class="h2" id="baufortschritt-titel">Was gebaut ist, sieht man im Modell</h2>
+          </div>
+          <p class="lead">Woche für Woche wird der Stand der Baustelle am BIM-Modell eingefärbt und mit Punktwolken aus der Realität abgeglichen.</p>
+        </header>
+
+        <div class="progress">
+          <article class="progress-card">
+            <!--
+              Video einbinden: data-video-src="assets/video/fortschrittskontrolle.mp4"
+              oder extern:     data-video-embed="https://www.youtube-nocookie.com/embed/VIDEO-ID"
+            -->
+            <figure class="video-slot" data-video-src="" data-video-embed="" data-video-title="Fortschrittskontrolle am BIM-Modell">
+              <div class="video-slot__placeholder">
+                <span class="video-slot__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+                <span class="video-slot__label">Video · Fortschrittskontrolle</span>
+                <span class="video-slot__badge">Video folgt</span>
+              </div>
+            </figure>
+            <div class="progress-card__body">
+              <h3 class="h3 h3--sm">Fortschrittskontrolle</h3>
+              <p>Jedes Bauteil im Modell trägt seinen aktuellen Status – für die Baubesprechung und die wöchentliche Darstellung des Baufortschritts.</p>
+              <div class="legend">
+                <h4 class="label">Legende</h4>
+                <dl>
+                  <div><dt><span class="swatch swatch--built"></span>Grün</dt><dd>Wurde gebaut</dd></div>
+                  <div><dt><span class="swatch swatch--planned"></span>Rot</dt><dd>Vorschau / Arbeitsanmeldung</dd></div>
+                  <div><dt><span class="swatch swatch--partial"></span>Orange</dt><dd>Teilweise erbracht, Element kann nicht geteilt werden</dd></div>
+                </dl>
+              </div>
+            </div>
+          </article>
+
+          <article class="progress-card">
+            <figure class="video-slot" data-video-src="" data-video-embed="" data-video-title="Integration der Punktwolke in das As-Built-Modell">
+              <div class="video-slot__placeholder">
+                <span class="video-slot__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+                <span class="video-slot__label">Video · Integration Punktwolke</span>
+                <span class="video-slot__badge">Video folgt</span>
+              </div>
+            </figure>
+            <div class="progress-card__body">
+              <h3 class="h3 h3--sm">Integration Punktwolke</h3>
+              <p>Aufgenommene Punktwolken werden in das As-Built-Modell eingebettet und machen Abweichungen sichtbar.</p>
+              <ul class="checks">
+                <li>Einbettung von Punktwolken in As-Built-Modell</li>
+                <li>Verbindung virtuelles Modell mit Realität</li>
+                <li>Lageabgleich IST – SOLL</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 OpenSpace ============ -->
+    <section class="section section--dark grid-bg-dark" id="openspace" aria-labelledby="openspace-titel">
+      <div class="container openspace">
+        <div class="openspace__text">
+          <header class="section-head">
+            <p class="eyebrow eyebrow--bright"><span>06</span><span class="eyebrow__rule"></span><span>OpenSpace</span></p>
+            <h2 class="h2" id="openspace-titel">360°-Video&shy;dokumentation</h2>
+          </header>
+          <ol class="features">
+            <li><span>01</span>Lückenlose visuelle Aufzeichnung durch 360°-Aufnahmen</li>
+            <li><span>02</span>Automatische Verortung auf Planunterlage</li>
+            <li><span>03</span>Vor-Ort-Notizen für bildbasiertes Aufgabenmanagement</li>
+            <li><span>04</span>Zeitliche Gegenüberstellung zur Fortschrittskontrolle</li>
+            <li><span>05</span>Verknüpfung mit BIM-Modell</li>
+            <li><span>06</span>Einspielen von Punktwolken</li>
+          </ol>
+          <div class="note">
+            <p class="label label--bright">Schnittstellen</p>
+            <p>Direkte Integration zu Autodesk, Procore oder Revizto für das Aufgabenmanagement – oder Export als BCF-Issue nach BIMcollab und damit weiter in Navisworks und Revit.</p>
+          </div>
+        </div>
+
+        <div class="openspace__media">
+          <figure class="video-slot video-slot--deep" data-video-src="" data-video-embed="" data-video-title="OpenSpace-Rundgang am Haltepunkt Roigheim">
+            <div class="video-slot__placeholder">
+              <span class="video-slot__play video-slot__play--beige" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5Z"/></svg></span>
+              <span class="video-slot__label">Video · OpenSpace-Rundgang</span>
+              <span class="video-slot__badge">Video folgt</span>
+            </div>
+          </figure>
+          <div class="qr-card qr-card--beige">
+            <img src="assets/img/qr-openspace.png" width="780" height="780" alt="QR-Code zum OpenSpace-Projekt Roigheim" loading="lazy">
+            <div>
+              <strong>Projekt in OpenSpace</strong>
+              <a class="link-arrow" href="https://eu.openspace.ai/projects/sCIRtwCmSYC5fCfQSbdJbw" target="_blank" rel="noopener">Rundgang öffnen
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                <span class="visually-hidden">(öffnet in neuem Tab)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Kontakt ============ -->
+    <section class="section" id="kontakt" aria-labelledby="kontakt-titel">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <h2 class="h2 h2--xl" id="kontakt-titel">Vielen Dank für Ihre <span class="accent">Aufmerksamkeit!</span></h2>
+          <p class="lead">Fragen zum Projekt, zur Baufortschrittskontrolle mit BIM oder zur 360°-Dokumentation? Sprechen Sie uns an.</p>
+        </header>
+        <div class="contacts">
+          <div class="contact-card">
+            <img src="assets/img/marcel-steek.webp" width="600" height="666" alt="" loading="lazy">
+            <div>
+              <strong>Marcel Steek</strong>
+              <span class="muted">Projektleitung · DB InfraGO AG</span>
+              <a href="mailto:Marcel.Steek@deutschebahn.com">Marcel.Steek@deutschebahn.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <img class="is-top" src="assets/img/lukas-roese.webp" width="600" height="750" alt="" loading="lazy">
+            <div>
+              <strong>Lukas Roese</strong>
+              <span class="muted">Externe Projektsteuerung · Mailänder Consult</span>
+              <a href="mailto:lroese@mic.de">lroese@mic.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Fußzeile ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17Z"/><path d="M20 13.5l8 4.5-8 4.5-8-4.5Z"/><path d="M12 18v6.5l8 4.5 8-4.5V18M20 22.5V29"/></svg>
+        <span><strong>BIM trifft Bahnsteig</strong> · BIM-Fachtagung Berlin · 30.09.2026</span>
       </p>
-      <a class="btn btn--ghost" href="#kontakt">Rider &amp; Infos anfordern</a>
+      <nav aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ============ KONTAKT ============ -->
-<section class="section section--contact" id="kontakt">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">05 — Booking</p>
-      <h2 class="h2">Macht euer Event<br><span class="accent">zum Highlight.</span></h2>
-      <p class="sec-sub">
-        Erzählt uns kurz von eurem Anlass – wir melden uns mit Verfügbarkeit
-        und einem passenden Angebot zurück.
-      </p>
-    </div>
-
-    <div class="contact-grid">
-      <!-- TODO: action= auf euren Formular-Endpoint (z. B. Formspree) setzen. -->
-      <form class="form reveal" id="bookingForm" novalidate>
-        <div class="field">
-          <label for="f-name">Name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="f-mail">E-Mail</label>
-          <input id="f-mail" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div class="field">
-          <label for="f-date">Datum des Events</label>
-          <input id="f-date" name="datum" type="date">
-        </div>
-        <div class="field">
-          <label for="f-type">Art der Veranstaltung</label>
-          <input id="f-type" name="anlass" type="text" placeholder="Stadtfest, Firmenfeier, Geburtstag …">
-        </div>
-        <div class="field field--full">
-          <label for="f-msg">Nachricht</label>
-          <textarea id="f-msg" name="nachricht" rows="5" placeholder="Ort, Uhrzeit, erwartete Gästezahl, Bühne vorhanden?"></textarea>
-        </div>
-        <div class="field field--full">
-          <button class="btn" type="submit">Anfrage senden</button>
-          <p class="form__hint" id="formHint" role="status"></p>
-        </div>
-      </form>
-
-      <aside class="contact-side reveal" style="--d:.1s">
-        <!-- TODO: Echte Kontaktdaten eintragen. -->
-        <div class="contact-item">
-          <span class="contact-item__label">E-Mail</span>
-          <span class="contact-item__value is-todo">E-Mail-Adresse eintragen</span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item__label">Telefon</span>
-          <span class="contact-item__value is-todo">Telefonnummer eintragen</span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item__label">Region</span>
-          <span class="contact-item__value">Karlsruhe &amp; Umgebung –<br>auf Anfrage deutschlandweit</span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item__label">Social</span>
-          <span class="contact-item__value is-todo">Instagram- / Facebook-Link eintragen</span>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="wrap footer__inner">
-    <a class="logo logo--sm" href="#top">
-      <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true">
-        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4.5" y="5.5" width="55" height="53" rx="19" stroke="currentColor" stroke-width="7"/>
-          <path d="M48.5 24C48.5 16 41.5 11.5 32 11.5S15.5 16 15.5 23s7 9 16.5 9 16.5 3 16.5 10.5-7 11-16.5 11-16.5-4-16.5-11" stroke="var(--logo-halo)" stroke-width="17"/>
-          <path d="M48.5 24C48.5 16 41.5 11.5 32 11.5S15.5 16 15.5 23s7 9 16.5 9 16.5 3 16.5 10.5-7 11-16.5 11-16.5-4-16.5-11" stroke="currentColor" stroke-width="9.5"/>
-        </g>
-      </svg>
-      <span class="logo__text">sound<em>affair</em></span>
-    </a>
-    <p class="footer__tag">Die Liveband aus Karlsruhe · Funk · Soul · Blues · Rock · Pop</p>
-    <nav class="footer__links" aria-label="Rechtliches">
-      <!-- TODO: Impressum & Datenschutz verlinken bzw. anlegen. -->
-      <a href="#kontakt">Kontakt</a>
-      <a href="#" aria-disabled="true">Impressum</a>
-      <a href="#" aria-disabled="true">Datenschutz</a>
-    </nav>
-    <p class="footer__copy">© <span id="year">2026</span> Soundaffair</p>
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
+  <!-- Icon-Sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  </svg>
 </body>
 </html>
